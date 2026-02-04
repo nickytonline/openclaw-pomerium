@@ -2,7 +2,7 @@
 
 > **Note**: This project was formerly known as Moltbot and clawd. All references have been updated to OpenClaw.
 
-A containerized deployment of the OpenClaw gateway behind Pomerium for secure, authenticated access to Claude Code.
+A containerized deployment of the [OpenClaw](https://openclaw.ai/) gateway behind Pomerium for secure, authenticated access to Claude Code.
 
 ## Getting Started
 
