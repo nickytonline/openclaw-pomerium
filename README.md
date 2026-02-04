@@ -36,6 +36,17 @@ For detailed prerequisites, network requirements, and step-by-step instructions,
 - **OpenClaw Gateway**: AI assistant that takes action across your digital life
 - **Verify**: Pomerium's verification service for testing authentication
 
+## Architecture
+
+OpenClaw is distributed as an npm package and doesn't provide an official Docker image. This repository includes a custom Dockerfile (`openclaw/Dockerfile`) that builds a gateway container with:
+
+- OpenClaw CLI installed from npm
+- SSH server with Pomerium User CA integration
+- Git and Docker CLI for agent operations
+- Persistent workspace mounted at `/claw/workspace`
+
+The gateway runs on an internal Docker network with none of those ports exposed to the internet. All access is proxied through Pomerium. SSH traffic via port 2200 and HTTPS traffic via port 443—providing zero-trust authentication. See the [deployment guide](https://docs.pomerium.com/docs/guides/openclaw-gateway) for detailed architecture and security considerations. Where you deploy, port 22 will be open most likely. Once Pomerium is set up, you can turn off port 22 access if desired (recommended).
+
 ## Documentation
 
 All documentation has been consolidated into the comprehensive deployment guide:
