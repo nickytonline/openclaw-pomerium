@@ -8,7 +8,7 @@ A containerized deployment of the OpenClaw gateway behind Pomerium for secure, a
 
 For complete setup instructions, configuration options, and troubleshooting, please refer to the comprehensive guide:
 
-**[OpenClaw Gateway Deployment Guide](https://docs.pomerium.com/docs/guides/openclaw-gateway)**
+**[OpenClaw Gateway Deployment Guide](https://deploy-preview-2084--pomerium-docs.netlify.app/docs/guides/openclaw-gateway)**
 
 ## Quick Setup
 
@@ -28,7 +28,7 @@ cp .env.example .env
 docker-compose up -d
 ```
 
-For detailed prerequisites, network requirements, and step-by-step instructions, see the [full guide](https://docs.pomerium.com/docs/guides/openclaw-gateway).
+For detailed prerequisites, network requirements, and step-by-step instructions, see the [full guide](https://deploy-preview-2084--pomerium-docs.netlify.app/docs/guides/openclaw-gateway).
 
 ## What's Included
 
@@ -45,12 +45,12 @@ OpenClaw is distributed as an npm package and doesn't provide an official Docker
 - Git and Docker CLI for agent operations
 - Persistent workspace mounted at `/claw/workspace`
 
-The gateway runs on an internal Docker network with none of those ports exposed to the internet. All access is proxied through Pomerium. SSH traffic via port 2200 and HTTPS traffic via port 443—providing zero-trust authentication. See the [deployment guide](https://docs.pomerium.com/docs/guides/openclaw-gateway) for detailed architecture and security considerations. Where you deploy, port 22 will be open most likely. Once Pomerium is set up, you can turn off port 22 access if desired (recommended).
+The gateway runs on an internal Docker network with none of those ports exposed to the internet. All access is proxied through Pomerium. SSH traffic via port 2200 and HTTPS traffic via port 443—providing zero-trust authentication. See the [deployment guide](https://deploy-preview-2084--pomerium-docs.netlify.app/docs/guides/openclaw-gateway) for detailed architecture and security considerations. Where you deploy, port 22 will be open most likely. Once Pomerium is set up, you can turn off port 22 access if desired (recommended).
 
 ## Documentation
 
 All documentation has been consolidated into the comprehensive deployment guide:
-- [Setup & Configuration](https://docs.pomerium.com/docs/guides/openclaw-gateway)
+- [Setup & Configuration](https://deploy-preview-2084--pomerium-docs.netlify.app/docs/guides/openclaw-gateway)
 - SSH access configuration
 - Device pairing
 - Security considerations
@@ -59,6 +59,6 @@ All documentation has been consolidated into the comprehensive deployment guide:
 ## Support
 
 For issues or questions, please refer to:
-- [OpenClaw Gateway Guide](https://docs.pomerium.com/docs/guides/openclaw-gateway)
+- [OpenClaw Gateway Guide](https://deploy-preview-2084--pomerium-docs.netlify.app/docs/guides/openclaw-gateway)
 - [Pomerium Documentation](https://www.pomerium.com/docs)
 - [OpenClaw](https://openclaw.ai)
