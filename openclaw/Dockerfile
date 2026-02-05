@@ -1,8 +1,8 @@
 FROM node:24-slim
 
-# Install git, openssh-server, iproute2 (for ip command), and Docker CLI
+# Install git, openssh-server, iproute2 (for ip command), jq, and Docker CLI
 RUN apt-get update && \
-  apt-get install -y git openssh-server iproute2 ca-certificates curl sudo && \
+  apt-get install -y git openssh-server iproute2 jq ca-certificates curl sudo && \
   install -m 0755 -d /etc/apt/keyrings && \
   curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc && \
   chmod a+r /etc/apt/keyrings/docker.asc && \

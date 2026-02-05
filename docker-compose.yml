@@ -42,6 +42,7 @@ services:
     environment:
       HOME: /claw
       TERM: xterm-256color
+      POMERIUM_CLUSTER_DOMAIN: ${POMERIUM_CLUSTER_DOMAIN}
     volumes:
       - ./openclaw-data/config:/claw
       - ./openclaw-data/workspace:/claw/workspace

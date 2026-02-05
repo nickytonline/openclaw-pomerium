@@ -15,6 +15,23 @@ else
   echo "Warning: Could not detect any Docker networks"
 fi
 
+# Configure allowed origins (requires POMERIUM_CLUSTER_DOMAIN)
+if [ -z "$POMERIUM_CLUSTER_DOMAIN" ]; then
+  echo "Error: POMERIUM_CLUSTER_DOMAIN environment variable is required"
+  exit 1
+fi
+
+NEW_ORIGIN="https://openclaw.$POMERIUM_CLUSTER_DOMAIN"
+echo "Configuring allowed origins for $NEW_ORIGIN"
+
+# Get current allowedOrigins, append if not already present
+CURRENT=$(su - claw -c "openclaw config get gateway.controlUi.allowedOrigins" 2>/dev/null || echo "[]")
+UPDATED=$(echo "$CURRENT" | jq -c --arg origin "$NEW_ORIGIN" 'if index($origin) then . else . + [$origin] end')
+
+su - claw -c "openclaw config set gateway.controlUi.allowedOrigins '$UPDATED'" 2>/dev/null || {
+  echo "Warning: Could not set allowedOrigins (config may not exist yet)"
+}
+
 # Start SSH daemon (must run as root)
 /usr/sbin/sshd
 
