@@ -32,6 +32,20 @@
             "8.8.4.4"
           ]
         }
+      },
+      "compaction": {
+        "memoryFlush": {
+          "enabled": true
+        }
+      },
+      "memorySearch": {
+        "experimental": {
+          "sessionMemory": true
+        },
+        "sources": [
+          "memory",
+          "sessions"
+        ]
       }
     }
   },
